@@ -50,4 +50,14 @@ public class GutsTest {
     public void testmatch7() {
         assertEquals(false, foo.match("jkl", "aaabcbbcc"));
     }
+    @Test
+    public void testmatch8() {
+        assertEquals(true, foo.match("cb.", "aaabcbbcc"));
+    }
+
+    @Test
+    public void testmatch9() {
+        assertEquals(false, foo.match("cb.", "aaabcabcc"));
+    }
+
 }

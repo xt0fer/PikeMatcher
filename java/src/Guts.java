@@ -51,7 +51,7 @@ public class Guts {
     private int matchhere(int r, int t) {
         if (r == this.regex.length) return 1;
         if ((r + 1 < this.regex.length) && (this.regex[r + 1] == '*'))
-            return matchstar(this.regex[0], r + 2, t);
+            return matchstar(this.regex[r], r + 2, t);
         if (this.regex[r] == '$' && ((r + 1) == this.regex.length))
             return (t == text.length) ? 1 : 0;
         if ((t != this.text.length) && (this.regex[r] == '.' || this.regex[r] == this.text[t]))
