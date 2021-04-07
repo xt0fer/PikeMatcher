@@ -1,4 +1,6 @@
+package rocks.zipcode;
 import static org.junit.jupiter.api.Assertions.*;
+import rocks.zipcode.PikeMatcher;
 
 class PikeMatcherTest {
 
