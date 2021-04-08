@@ -1,3 +1,5 @@
+package main.java.rocks.zipcode;
+
 public class Guts {
 
     private char regex[] = null;
