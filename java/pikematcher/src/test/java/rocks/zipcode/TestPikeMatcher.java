@@ -136,8 +136,6 @@ class PikeMatcherTest {
 
     @Test
     public void testmatch6() {
-        //doesn't work because Star is bugged.
-        // Loop only ends once index is outside array, crashing program
         PikeMatcher foo = new PikeMatcher();
         assertEquals(true, foo.match(".*cc", "aaabcbbcc"));
     }
@@ -162,7 +160,38 @@ class PikeMatcherTest {
     @Test
     public void testmatch10(){
         PikeMatcher foo = new PikeMatcher();
-        assertEquals(true, foo.match("h*cc", "aaabhccabcc"));
+        assertEquals(true, foo.match("h*cc", "ccaaababcc"));
+    }
+    @Test
+    public void testmatch11(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("h*cc", "aaabhccab"));
+    }
+    @Test
+    public void testmatch12(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("a*b", "aaabhcabcc"));
+    }
+
+    @Test
+    public void testmatch13(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^aaab", "aaab hccabcc"));
+    }
+    @Test
+    public void testmatch14(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^a*bbc", "aaaaabbccbbhccabcc"));
+    }
+    @Test
+    public void testmatch15(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^c.b", "cabaaaaabcbhccabcc"));
+    }
+    @Test
+    public void testmatch16(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(false, foo.match("^h*bbc", "aaaaabbccbbhccabcc"));
     }
 
 }

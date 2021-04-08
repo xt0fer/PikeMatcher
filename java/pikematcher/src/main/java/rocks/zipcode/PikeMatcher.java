@@ -50,12 +50,11 @@ public class PikeMatcher {
     public boolean matchstar(char c, String regexp, String text) {
 
         do {
+            text=text.substring(1);
             if (matchhere(regexp, text) == true) {
                 return true;
             }
-            text=text.substring(1);
-            //I don't think the exit condition is correct,
-            // should lead to prematurely leaving the loop before searching the whole text for a match
+
         } while (!text.equals("") &&
                 (text.charAt(0) == c || c == '.'));
         return false;
