@@ -1,3 +1,6 @@
+package test.java.rocks.zipcode;
+
+import main.java.rocks.zipcode.Guts;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,8 +20,7 @@ public class GutsTest {
     }
 
     @Test
-    public void testmatch1() {
-        assertEquals(true, foo.match("abc", "abc"));
+    public void testmatch1() { assertEquals(true, foo.match("abc", "abc"));
     }
 
     @Test

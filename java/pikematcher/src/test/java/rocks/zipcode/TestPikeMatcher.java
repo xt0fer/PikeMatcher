@@ -1,6 +1,10 @@
-package rocks.zipcode;
+package test.java.rocks.zipcode;
 import static org.junit.jupiter.api.Assertions.*;
-import rocks.zipcode.PikeMatcher;
+
+import org.junit.After;
+import org.junit.Before;
+import main.java.rocks.zipcode.PikeMatcher;
+import org.junit.jupiter.api.Test;
 
 class PikeMatcherTest {
 
@@ -89,7 +93,7 @@ class PikeMatcherTest {
         assertFalse(actual);
     }
 
-    private PikeMatcher foo;
+    /*private PikeMatcher foo;
 
     @Before
     public void setUp() throws Exception {
@@ -98,50 +102,67 @@ class PikeMatcherTest {
 
     @After
     public void tearDown() throws Exception {
-    }
+    }*/
 
     @Test
     public void testmatch1() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(true, foo.match("abc", "abc"));
     }
 
     @Test
     public void testmatch2() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(true, foo.match("^a", "abc"));
     }
 
     @Test
     public void testmatch3() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(false, foo.match("^b", "abc"));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void testmatch4() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(true, foo.match("abc", "aaabcbbcc"));
     }
 
     @Test
     public void testmatch5() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(true, foo.match("c$", "aaabcbbcc"));
     }
 
     @Test
     public void testmatch6() {
+        //doesn't work because Star is bugged.
+        // Loop only ends once index is outside array, crashing program
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(true, foo.match(".*cc", "aaabcbbcc"));
     }
 
     @Test
     public void testmatch7() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(false, foo.match("jkl", "aaabcbbcc"));
     }
     @Test
     public void testmatch8() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(true, foo.match("cb.", "aaabcbbcc"));
     }
 
     @Test
     public void testmatch9() {
+        PikeMatcher foo = new PikeMatcher();
         assertEquals(false, foo.match("cb.", "aaabcabcc"));
+    }
+
+    @Test
+    public void testmatch10(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("h*cc", "aaabhccabcc"));
     }
 
 }
