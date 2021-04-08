@@ -194,4 +194,36 @@ class PikeMatcherTest {
         assertEquals(false, foo.match("^h*bbc", "aaaaabbccbbhccabcc"));
     }
 
+    @Test
+    public void testmatch17(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^a.*bbc", "aaaaabbccbbhccabcc"));
+    }
+
+    @Test
+    public void testmatch18(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(false, foo.match("^a.*bhc", "aaaaabbccbbccabcc"));
+    }
+    @Test
+    public void testmatch19(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^abc$", "abc"));
+    }
+    @Test
+    public void testmatch20(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^a.c$", "abc"));
+    }
+    @Test
+    public void testmatch21(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^a.*c$", "abh219sc"));
+    }
+    @Test
+    public void testmatch22(){
+        PikeMatcher foo = new PikeMatcher();
+        assertEquals(true, foo.match("^a*bc.*bcc$", "aaabcabcc"));
+    }
+
 }

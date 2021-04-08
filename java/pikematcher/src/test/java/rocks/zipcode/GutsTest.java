@@ -62,4 +62,40 @@ public class GutsTest {
         assertEquals(false, foo.match("cb.", "aaabcabcc"));
     }
 
+    @Test
+    public void testmatch10() {
+        assertEquals(true, foo.match(".*cc", "aaabcabcc"));
+    }
+
+
+    @Test
+    public void testmatch11() {
+        assertEquals(true, foo.match("h*bca", "aaabcabcc"));
+    }
+//Testing to ensure guts doesn't have the same bug as PikeMatcher
+    @Test
+    public void testmatch12() {
+        assertEquals(true, foo.match("^a*b", "aaabcabcc"));
+    }
+
+    @Test
+    public void testmatch13() {
+        assertEquals(true, foo.match("^aaab", "aaabcabcc"));
+    }
+    @Test
+    public void testmatch14() {
+        assertEquals(true, foo.match("^a.ab", "aaabcabcc"));
+    }
+    @Test
+    public void testmatch15() {
+        assertEquals(true, foo.match("^.*b", "aaabcabcc"));
+    }
+    @Test
+    public void testmatch16() {
+        assertEquals(true, foo.match("^aabc$", "aabc"));
+    }
+    @Test
+    public void testmatch17() {
+        assertEquals(true, foo.match("^a*bc.*bcc$", "aaabcabcc"));
+    }
 }
