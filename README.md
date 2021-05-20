@@ -1,3 +1,10 @@
+Updates: Organized the codes packages to be functional, fixed the code so
+all tests pass, and fixed a glitch which prevented operations from being
+used in tandem.
+
+-Abiel F.
+
+-------------------------------------------------------------------------
 # RegEx 
 
 This is a simple Java implementation of the C algorithm in the
