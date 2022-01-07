@@ -8,4 +8,6 @@ java implementation I wrote.
 
 If you'd like, add a bunch of tests. And then submit a pull request.
 
+There is also a sift implementation. Who wants to give me a python one?
+
 _-kyounger_
